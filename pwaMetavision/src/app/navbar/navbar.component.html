@@ -2,14 +2,14 @@
   <a class="navbar-brand" href="#">
     <h2 class="text-light mb-0"><b>KARBAN</b></h2>
   </a>
-  <a href="#" class="hamburger text-light" (click)="toggleNav()">
+  <a href="#" onclick="event.preventDefault()" class="hamburger text-light" (click)="toggleNav()" *ngIf="auth.user | async as user">
     <i class="fa-solid fa-bars fa-2x"></i>
   </a>
 
   <div class="menu" *ngIf="showNav">
-    <div class="container">
-      <a id="button" href="#" class="closeBtn" (click)="toggleNav()">&times;</a>
-      <ul class="nav">
+    <div class="container" *ngIf="auth.user | async as user">
+      <a id="button" href="#" class="closeBtn" (click)="toggleNav()" onclick="event.preventDefault()">&times;</a>
+      <ul class="nav flex-column">
         <li class="nav-item">
           <a class="nav-link" href="#">HOME</a>
         </li>
@@ -19,13 +19,12 @@
         <li class="nav-item">
           <a class="nav-link" href="#">MY PROFILE</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item mt-5">
           <a
-            *ngIf="auth.user | async as user"
-            class="nav-link"
+            class="nav-link text-primary"
             href="#"
             (click)="logout()"
-            ><u>LOGOUT</u></a
+            >LOGOUT<i class="fa-solid fa-arrow-right-from-bracket ms-3"></i></a
           >
         </li>
       </ul>

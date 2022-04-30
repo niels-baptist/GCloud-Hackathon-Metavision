@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AnimationOptions } from 'ngx-lottie';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 import {
   AngularFirestore,
@@ -22,7 +23,8 @@ interface User {
 export class HomeComponent implements OnInit {
   constructor(
     public auth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private router: Router
   ) {}
   private userCol!: AngularFirestoreCollection<User>;
   ngOnInit(): void {}
@@ -43,6 +45,8 @@ export class HomeComponent implements OnInit {
           budget: 0,
           monthlyEstimate: 0,
         });
+
+        this.router.navigate(['/setup']);
       }
     });
   }
