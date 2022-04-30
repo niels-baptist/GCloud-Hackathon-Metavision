@@ -11,7 +11,11 @@
         <!-- draw a vertical line -->
 
         <div class="col-12 col-lg-6 m-auto">
-            <button class="rounded btn btn-light d-block m-auto mt-5 mb-5 ">hier komt google</button>
+            <button class="btn btn-outline-primary" (click)="login()">
+                <img src="/assets/google.png" class="google-logo" alt="google logo" />
+                Log in with google
+            </button>
+            <p *ngIf="auth.user | async as user">{{ user.uid }}</p>
         </div>
     </div>
 </div>
