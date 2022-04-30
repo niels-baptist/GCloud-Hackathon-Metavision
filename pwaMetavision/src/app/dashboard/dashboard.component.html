@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="p-5">Today's footprint</h1>
+        </div>
+    </div>
+
+    <div class="progress">
+        <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+    <p class="p-5 text-center"> 
+        <span class="text-success">135 kg CO2</span> 
+        of 
+        <span class="text-success">540 kg CO2</span>
+        (<span class="text-dark">25</span>%) 
+        spent
+    </p>
+
+    <div class="row">
+        <div class="col-12 text-center">
+            <h1 class="p-5">Activities</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-4 text-center">
+            <button (click)='add_electricity()' class="btn btn-success">+ Add 1 dryer cyclus of electricity (100 kwh)</button>
+        </div>
+        <div class="col-4 text-center">
+            <button (click)='add_showering()' class="btn btn-success">+ Add showering for 10 minutes (150 liters)</button>
+        </div>
+        <div class="col-4 text-center">
+            <button (click)='add_transportation()' class="btn btn-success">+ Add 1 car ride with no passengers (100km)</button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-12 m-4 p-4  rounded">
+            <h2>Activities list</h2>
+        </div>
+        <div *ngFor="let activity_log of activity_log_array" class="col-12 m-4 p-4  border rounded">
+            <h3 class="text-center">{{activity_log.activity_name}}</h3>
+            <div>
+                <p>Amount: <b>{{activity_log.amount_metric}}</b> </p>
+                <p>Did you know that this equates to <b> {{activity_log.total_co2}}</b> kg of CO2</p>
+            </div>
+            <!-- <p>{{activity_log.amount}}</p>  -->
+        </div> 
+    </div>

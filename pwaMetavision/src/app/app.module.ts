@@ -21,6 +21,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -34,6 +35,7 @@ import { GoalComponent } from './goal/goal.component';
     NavbarComponent,
     SetupComponent,
     GoalComponent
+    DashboardComponent
     ForecastComponent
   ],
   imports: [
