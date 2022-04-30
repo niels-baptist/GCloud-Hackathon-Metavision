@@ -21,6 +21,9 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ClimatiqService } from './climatiq.service';
 
 @NgModule({
   declarations: [
@@ -41,8 +44,10 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClimatiqService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
