@@ -20,6 +20,6 @@ jobs:
           id: vars
           run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
         - name: Build the latest Docker image
-          run: docker build . --file Dockerfile --tag pieterpa/angularmetavision:latest
+          run: docker build ./pwaMetavision --file Dockerfile --tag pieterpa/angularmetavision:latest
         - name: Push the latest Docker image
           run: docker push pieterpa/angularmetavision:latest
