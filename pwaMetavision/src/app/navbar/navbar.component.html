@@ -1,0 +1,27 @@
+<!-- Just an image -->
+<nav class="navbar navbar-light bg-primary px-3">
+    <a class="navbar-brand" href="#"><h2>Karban</h2></a>
+    <a href="#" class="hamburger text-dark" (click)="toggleNav()">
+        <i class="fa-solid fa-bars fa-2x"></i>
+    </a>
+</nav>
+
+<div class="menu" *ngIf="showNav">
+  <div class="container">
+    <a id="button" href="#" class="closeBtn" (click)="toggleNav()">&times;</a>
+    <ul class="nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#">HOME</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">OVERVIEW</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">MY PROFILE</a>
+      </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#"><u>LOGOUT</u></a>
+    </li>
+    </ul>
+  </div>
+</div>
