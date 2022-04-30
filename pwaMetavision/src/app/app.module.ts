@@ -26,6 +26,7 @@ import { ForecastComponent } from './forecast/forecast.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClimatiqService } from './climatiq.service';
+import { GoalComponent } from './goal/goal.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { ClimatiqService } from './climatiq.service';
     HomeComponent,
     NavbarComponent,
     SetupComponent,
-    DashboardComponent
+    GoalComponent,
+    DashboardComponent,
     ForecastComponent
   ],
   imports: [
