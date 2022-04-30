@@ -1,1 +1,43 @@
-<p>setup page</p>
+<div class="container text-center">
+    <h1 class="p-5">Lets create your profile!</h1>
+    <form (submit)="onSubmit()">
+        <div class="form-group">
+            <label for="power" class="form-label">
+                Monthly power consumption (KWh)
+            </label>
+            <input id="power" class="form-control" type="number" required [(ngModel)]="power" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group mt-5">
+            <label for="travel">
+                Estimate monthly travel distance (km)
+            </label>
+            <input id="travel"  class="form-control" type="number" required [(ngModel)]="travel" [ngModelOptions]="{standalone: true}">
+        </div>
+        <div class="form-group mt-5">
+            <p>Estimate monthly shower time</p>
+            <div class="row">
+                <div class="col-12 col-sm-6">
+                    <label for="amount_shower">
+                        Number of showers / week
+                    </label>
+                    <input id="amount_shower"  class="form-control" type="number" required [(ngModel)]="amount_shower"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+                <div class="col-12 col-sm-6">
+                    <label for="time_shower">
+                        Average time / shower (minutes)
+                    </label>
+                    <input id="time_shower" class="form-control" type="number" required [(ngModel)]="time_shower"
+                        [ngModelOptions]="{standalone: true}">
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5">
+            <button *ngIf="!submitted" class="button btn btn-lg btn-outline-primary" type="submit">Get started! <i
+                    class="fa-solid fa-arrow-right"></i></button>
+            <button *ngIf="submitted" class="button btn btn-lg btn-outline-primary" type="submit" disabled><i
+                    class="fas fa-spinner fa-pulse me-2"></i>Loading</button>
+        </div>
+    </form>
+</div>
