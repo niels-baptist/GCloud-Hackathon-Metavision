@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ClimatiqService } from '../climatiq.service';
+import { Router } from '@angular/router';
 
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import {
@@ -27,7 +28,8 @@ export class SetupComponent implements OnInit {
   constructor(
     private climatiqService: ClimatiqService, 
     public auth: AngularFireAuth,
-    private firestore: AngularFirestore
+    private firestore: AngularFirestore,
+    private router: Router
   ) { }
 
   private profileCol = this.firestore.collection<Profile>("profiles");
@@ -51,7 +53,7 @@ export class SetupComponent implements OnInit {
           if (user) {
             this.profileCol.add({ uid: user.uid.toString(), power_kwh: this.power, travel_km: this.travel, water_l: liters, total_emission: total_emission })
           }
-          // TODO: Redirect
+          this.router.navigate(['/goal', { total_emission: total_emission }]);
         });
       });
     }

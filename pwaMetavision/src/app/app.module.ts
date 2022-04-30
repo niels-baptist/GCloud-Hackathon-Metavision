@@ -24,13 +24,15 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClimatiqService } from './climatiq.service';
+import { GoalComponent } from './goal/goal.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    SetupComponent
+    SetupComponent,
+    GoalComponent
   ],
   imports: [
     BrowserModule,
