@@ -21,6 +21,7 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { ForecastComponent } from './forecast/forecast.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ClimatiqService } from './climatiq.service';
@@ -30,7 +31,8 @@ import { ClimatiqService } from './climatiq.service';
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    SetupComponent
+    SetupComponent,
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
