@@ -22,6 +22,10 @@ import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ForecastComponent } from './forecast/forecast.component';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { ClimatiqService } from './climatiq.service';
 
 @NgModule({
   declarations: [
@@ -30,6 +34,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     NavbarComponent,
     SetupComponent,
     DashboardComponent
+    ForecastComponent
   ],
   imports: [
     BrowserModule,
@@ -43,8 +48,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     }),
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ClimatiqService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
