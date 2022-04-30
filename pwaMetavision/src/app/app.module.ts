@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 import { LottieModule } from 'ngx-lottie';
+import { SetupComponent } from './setup/setup.component';
 
 export function playerFactory() { // add this line
   return import('lottie-web'); // add this line
@@ -18,7 +19,8 @@ export function playerFactory() { // add this line
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    SetupComponent
   ],
   imports: [
     BrowserModule,
