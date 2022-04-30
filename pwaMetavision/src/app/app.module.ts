@@ -34,8 +34,8 @@ import { GoalComponent } from './goal/goal.component';
     HomeComponent,
     NavbarComponent,
     SetupComponent,
-    GoalComponent
-    DashboardComponent
+    GoalComponent,
+    DashboardComponent,
     ForecastComponent
   ],
   imports: [
