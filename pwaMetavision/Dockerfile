@@ -19,7 +19,7 @@
 # RUN npm install -g @angular/cli
 
 #stage 1
-FROM node:latest as node
+FROM node:16 as node
 WORKDIR /app
 COPY . .
 RUN npm install --force
