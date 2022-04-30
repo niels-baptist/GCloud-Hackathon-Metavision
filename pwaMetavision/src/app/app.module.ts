@@ -22,6 +22,10 @@ import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/auth';
 
+import { SecurityModule } from './security/security.module';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +34,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
     SetupComponent
   ],
   imports: [
+    SecurityModule,
     BrowserModule,
     AppRoutingModule,
     LottieModule.forRoot({ player: playerFactory}) ,
@@ -40,7 +45,7 @@ import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/compat/aut
       registrationStrategy: 'registerWhenStable:30000',
     }),
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireAuthModule
+    AngularFireAuthModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
