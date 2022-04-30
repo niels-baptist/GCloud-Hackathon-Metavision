@@ -21,13 +21,15 @@ import { provideAuth, getAuth } from '@angular/fire/auth';
 import { initializeApp } from '@firebase/app';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NavbarComponent,
-    SetupComponent
+    SetupComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
