@@ -32,12 +32,12 @@
               "src/manifest.webmanifest"
             ],
             "styles": [
-              "src/styles.sass",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css"
+              "src/styles.sass"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "./node_modules/@lottiefiles/lottie-player/dist/lottie-player.js"
             ],
             "serviceWorker": true,
             "ngswConfigPath": "ngsw-config.json"
