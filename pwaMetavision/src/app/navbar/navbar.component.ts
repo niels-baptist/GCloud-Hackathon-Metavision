@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -8,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 export class NavbarComponent implements OnInit {
   showNav: boolean = false;
 
-  constructor() {}
+  constructor(public auth: AngularFireAuth, private router: Router) {}
 
   ngOnInit(): void {}
 
   toggleNav(): void {
     this.showNav = !this.showNav;
+  }
+  async logout() {
+    this.auth.signOut();
+    window.location.href = '/';
   }
 }
