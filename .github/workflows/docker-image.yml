@@ -20,10 +20,10 @@ jobs:
           id: vars
           run: echo ::set-output name=tag::$(echo ${GITHUB_REF:10})
         - name: Build the tagged Docker image
-          run: docker build . --file Dockerfile --tag pieterpa/angulaMetavision:${{steps.vars.outputs.tag}}
+          run: docker build . --file Dockerfile --tag pieterpa/angularmetavision:${{steps.vars.outputs.tag}}
         - name: Push the tagged Docker image
-          run: docker push pieterpa/angulaMetavision:${{steps.vars.outputs.tag}}
+          run: docker push pieterpa/angularmetavision:${{steps.vars.outputs.tag}}
         - name: Build the latest Docker image
-          run: docker build . --file Dockerfile --tag pieterpa/angulaMetavision:latest
+          run: docker build . --file Dockerfile --tag pieterpa/angularmetavision:latest
         - name: Push the latest Docker image
-          run: docker push pieterpa/angulaMetavisionpjlamb12/angular-cli:latest
+          run: docker push pieterpa/angularmetavision:latest
